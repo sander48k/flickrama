@@ -29,8 +29,6 @@ class MasterViewController: UITableViewController, UISearchBarDelegate {
         searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true;
         tableView.tableHeaderView = searchController.searchBar
-        
-//        self.tableView.registerNib(UINib(nibName: "FlickrPhotoTableCellTableViewCell", bundle: nil), forCellReuseIdentifier: "FlickrPhotoTableCellTableViewCell")
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -53,6 +51,11 @@ class MasterViewController: UITableViewController, UISearchBarDelegate {
                 controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
                 controller.navigationItem.leftItemsSupplementBackButton = true
             }
+        }
+        
+        if segue.identifier == "showPhotoBook" {
+            let controller = segue.destinationViewController as! PhotoBookViewController
+            controller.photoList = self.photoList
         }
     }
 
@@ -90,7 +93,9 @@ class MasterViewController: UITableViewController, UISearchBarDelegate {
         photoList.clear()
         NSLog("searching for photos containing: \(searchController.searchBar.text!)")
         photoList.fetchByText(searchBar.text!) {
+            [unowned self] in
             self.tableView.reloadData()
+            self.searchController.active = false
         }
     }
 }
