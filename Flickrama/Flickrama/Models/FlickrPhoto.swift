@@ -15,6 +15,8 @@ class FlickrPhoto {
     
     var title:String?
     var photoId:String?
+    var ownerName:String?
+    var views:String?
     
     // below properties are needed to construct the URL of the photo
     var server:String?

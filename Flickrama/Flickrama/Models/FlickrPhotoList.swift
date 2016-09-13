@@ -33,7 +33,7 @@ class FlickrPhotoList {
         - text: the text to search for in titles, description or tags
      */
     func fetchByText(text: String!, callback:(()->())?) -> Void {
-        FlickrKit.sharedFlickrKit().call("flickr.photos.search", args: ["text": text]) { (response, error) in
+        FlickrKit.sharedFlickrKit().call("flickr.photos.search", args: ["text": text, "extras" : "description,views,owner_name"]) { (response, error) in
             
             if (response != nil) {
                 let topPhotos = response["photos"] as! [NSObject: AnyObject]
@@ -47,6 +47,8 @@ class FlickrPhotoList {
                     newPhoto.farm = String(photoDict["farm"]!)
                     newPhoto.server = photoDict["server"] as? String
                     newPhoto.secret = photoDict["secret"] as? String
+                    newPhoto.ownerName = photoDict["ownername"] as? String
+                    newPhoto.views = String(photoDict["views"]!)
                     
                     self.photoList.append(newPhoto)
                 }

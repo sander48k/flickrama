@@ -36,19 +36,61 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="v04-5y-nfu">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                             </imageView>
+                            <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gt8-X6-9DM">
+                                <rect key="frame" x="0.0" y="472" width="600" height="128"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aSr-pH-ERT">
+                                        <rect key="frame" x="8" y="8" width="584" height="27"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Owner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kfg-vD-pPc">
+                                        <rect key="frame" x="8" y="43" width="584" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Views" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3L3-PS-xkF">
+                                        <rect key="frame" x="8" y="72" width="584" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="Dsh-Av-Y9J"/>
+                                    <constraint firstItem="3L3-PS-xkF" firstAttribute="leading" secondItem="Gt8-X6-9DM" secondAttribute="leading" constant="8" id="JSj-PB-az5"/>
+                                    <constraint firstItem="kfg-vD-pPc" firstAttribute="leading" secondItem="Gt8-X6-9DM" secondAttribute="leading" constant="8" id="VTq-UA-N3e"/>
+                                    <constraint firstItem="3L3-PS-xkF" firstAttribute="top" secondItem="kfg-vD-pPc" secondAttribute="bottom" constant="8" id="VeW-XW-X08"/>
+                                    <constraint firstItem="aSr-pH-ERT" firstAttribute="leading" secondItem="Gt8-X6-9DM" secondAttribute="leading" constant="8" id="W4D-iZ-vHd"/>
+                                    <constraint firstAttribute="trailing" secondItem="aSr-pH-ERT" secondAttribute="trailing" constant="8" id="Z7T-Uj-2xh"/>
+                                    <constraint firstAttribute="trailing" secondItem="3L3-PS-xkF" secondAttribute="trailing" constant="8" id="dZO-lJ-hhM"/>
+                                    <constraint firstItem="aSr-pH-ERT" firstAttribute="top" secondItem="Gt8-X6-9DM" secondAttribute="top" constant="8" id="oiw-U4-p5C"/>
+                                    <constraint firstItem="kfg-vD-pPc" firstAttribute="top" secondItem="aSr-pH-ERT" secondAttribute="bottom" constant="8" id="rkX-3V-fAQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="kfg-vD-pPc" secondAttribute="trailing" constant="8" id="yaQ-pO-Azz"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Gt8-X6-9DM" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leading" id="4US-NS-tGu"/>
                             <constraint firstItem="v04-5y-nfu" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" id="5TI-Pq-moS"/>
                             <constraint firstAttribute="trailing" secondItem="v04-5y-nfu" secondAttribute="trailing" id="NfT-5x-HdG"/>
                             <constraint firstItem="GAO-Cl-Wes" firstAttribute="top" secondItem="v04-5y-nfu" secondAttribute="bottom" id="Voo-LD-MmW"/>
+                            <constraint firstItem="GAO-Cl-Wes" firstAttribute="top" secondItem="Gt8-X6-9DM" secondAttribute="bottom" id="Z2n-YP-9eV"/>
                             <constraint firstItem="v04-5y-nfu" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leading" id="fDV-ny-mjA"/>
+                            <constraint firstAttribute="trailing" secondItem="Gt8-X6-9DM" secondAttribute="trailing" id="thg-IU-iVU"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Photo title" id="mOI-FS-AaM"/>
                     <connections>
                         <outlet property="photoImageView" destination="v04-5y-nfu" id="mIw-1u-bmz"/>
+                        <outlet property="photoOwnerLabel" destination="kfg-vD-pPc" id="kYz-ES-qeG"/>
+                        <outlet property="photoTitleLabel" destination="aSr-pH-ERT" id="xxR-pV-7Dm"/>
+                        <outlet property="photoViewsLabel" destination="3L3-PS-xkF" id="2dj-4D-bWN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>

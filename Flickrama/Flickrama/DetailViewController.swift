@@ -12,6 +12,10 @@ class DetailViewController: UIViewController {
 
     @IBOutlet weak var photoImageView: UIImageView!
 
+    @IBOutlet weak var photoTitleLabel: UILabel!
+    @IBOutlet weak var photoViewsLabel: UILabel!
+    @IBOutlet weak var photoOwnerLabel: UILabel!
+
     var photoItem: FlickrPhoto? {
         
         didSet {
@@ -23,13 +27,29 @@ class DetailViewController: UIViewController {
     func configureView() {
         // Update the user interface for the detail item.
         if let photo = self.photoItem {
-            if let image = self.photoImageView {
-                image.sd_setImageWithURL(photo.urlLarge)
+            if let imageView = self.photoImageView {
+                imageView.sd_setImageWithURL(photo.urlLarge)
+                
+                // assume the other UI elements are set when imageView is set
+                photoTitleLabel.text = photo.title
+                
+                if let ownerName = photo.ownerName {
+                    photoOwnerLabel.text = "Owner: \(ownerName)"
+                }
+                
+                if let views = photo.views {
+                    photoViewsLabel.text = "Views: \(views)"
+                }
+                
+                
+                self.navigationItem.title = photo.title
             }
-            self.navigationItem.title = photo.title
         }
         else {
             self.navigationItem.title = ""
+            photoTitleLabel.text = ""
+            photoViewsLabel.text = ""
+            photoOwnerLabel.text = ""
         }
     }
 
