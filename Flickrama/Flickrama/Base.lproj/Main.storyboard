@@ -3,12 +3,13 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Master-->
+        <!--Photo List-->
         <scene sceneID="pY4-Hu-kfo">
             <objects>
-                <navigationController title="Master" id="RMx-3f-FxP" sceneMemberID="viewController">
+                <navigationController title="Photo List" id="RMx-3f-FxP" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Pmd-2v-anx">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -184,7 +185,7 @@
                                             </variation>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Photo title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xaq-7a-O3q">
-                                            <rect key="frame" x="108" y="40" width="79" height="21"/>
+                                            <rect key="frame" x="108" y="40" width="484" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
@@ -193,6 +194,7 @@
                                     <constraints>
                                         <constraint firstItem="Xaq-7a-O3q" firstAttribute="centerY" secondItem="d8I-9e-dLd" secondAttribute="centerY" id="YT6-fq-u1P"/>
                                         <constraint firstItem="d8I-9e-dLd" firstAttribute="leading" secondItem="37f-cq-3Eg" secondAttribute="leading" id="fz9-jH-y5I"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Xaq-7a-O3q" secondAttribute="trailing" id="gmR-mJ-Jn3"/>
                                         <constraint firstItem="d8I-9e-dLd" firstAttribute="top" secondItem="37f-cq-3Eg" secondAttribute="top" id="qR3-sA-W6L"/>
                                         <constraint firstItem="Xaq-7a-O3q" firstAttribute="leading" secondItem="d8I-9e-dLd" secondAttribute="trailing" constant="8" id="u4J-Vd-LLx"/>
                                     </constraints>
@@ -218,6 +220,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="photoBookButton" destination="5rR-Nh-wdG" id="YEC-sy-sM7"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
             </objects>

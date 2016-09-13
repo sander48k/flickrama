@@ -93,14 +93,14 @@
 				C54541221D7FF90900EE4466 /* Models */,
 				C54541231D7FF90900EE4466 /* Views */,
 				C536B6F21D7F297200A24EEA /* AppDelegate.swift */,
-				C536B6F41D7F297200A24EEA /* MasterViewController.swift */,
-				C536B6F61D7F297200A24EEA /* DetailViewController.swift */,
-				C536B6F81D7F297200A24EEA /* Main.storyboard */,
 				C536B6FB1D7F297200A24EEA /* Assets.xcassets */,
-				C536B6FD1D7F297200A24EEA /* LaunchScreen.storyboard */,
+				C536B6F61D7F297200A24EEA /* DetailViewController.swift */,
 				C536B7001D7F297200A24EEA /* Info.plist */,
-				C5140A4E1D86AA5000ADF672 /* PhotoBookViewController.swift */,
+				C536B6FD1D7F297200A24EEA /* LaunchScreen.storyboard */,
+				C536B6F81D7F297200A24EEA /* Main.storyboard */,
+				C536B6F41D7F297200A24EEA /* MasterViewController.swift */,
 				C5140A501D86ABFA00ADF672 /* PhotoBookPageViewController.swift */,
+				C5140A4E1D86AA5000ADF672 /* PhotoBookViewController.swift */,
 			);
 			path = Flickrama;
 			sourceTree = "<group>";

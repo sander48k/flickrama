@@ -11,6 +11,7 @@ import SDWebImage
 
 class MasterViewController: UITableViewController, UISearchBarDelegate {
 
+    @IBOutlet weak var photoBookButton: UIBarButtonItem!
     var detailViewController: DetailViewController? = nil
     var photoList = FlickrPhotoList()
     
@@ -29,6 +30,8 @@ class MasterViewController: UITableViewController, UISearchBarDelegate {
         searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true;
         tableView.tableHeaderView = searchController.searchBar
+        
+        photoBookButton.enabled = false
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -96,6 +99,7 @@ class MasterViewController: UITableViewController, UISearchBarDelegate {
             [unowned self] in
             self.tableView.reloadData()
             self.searchController.active = false
+            self.photoBookButton.enabled = (self.photoList.photoList.count > 0)
         }
     }
 }

@@ -28,6 +28,9 @@ class DetailViewController: UIViewController {
             }
             self.navigationItem.title = photo.title
         }
+        else {
+            self.navigationItem.title = ""
+        }
     }
 
     override func viewDidLoad() {
